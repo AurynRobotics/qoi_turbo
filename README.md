@@ -116,14 +116,14 @@ the fetched dependencies when consuming the repo as a submodule.
 ## Layout
 
 ```
-include/
-  qoi_turbo.hpp            - umbrella header
-  qoi_turbo_common.hpp     - shared types (desc_t, rgba_t, pixel_hash_fast)
-  qoi_turbo_encode.hpp     - encoder (encode, encode_to, encode_max_size)
-  qoi_turbo_decode.hpp     - decoder (decode, decode_to, decode_header)
+include/qoi_turbo.hpp      - single header: types, constants, encoder, decoder
 test/test_qoi_turbo.cpp    - roundtrip, bit-exact, cross-roundtrip, truncation
 bench/bench_qoi_turbo.cpp  - reference-vs-turbo encode/decode throughput
 ```
+
+The header is organized in four labeled sections: *Public types and
+constants*, *Internal helpers*, *Encoder*, *Decoder*. Everything lives in
+`namespace qoi_turbo`.
 
 ## License
 
